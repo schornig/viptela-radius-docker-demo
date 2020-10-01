@@ -3,16 +3,10 @@ services:
   free-radius:
     build:
       context: freeradius-dockerfile
-    deploy:
-      restart_policy:
-        condition: on-failure
     ports:
       - "1812:1812"
       - "1813:1813"
-    user: "0"
     networks:
       - webnet
-    environment:
-      - "TZ=Europe/Amsterdam"
 networks:
   webnet:

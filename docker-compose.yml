@@ -1,7 +1,8 @@
 version: "3"
 services:
   free-radius:
-    image: freeradius/freeradius-server:latest
+    build:
+      context: freeradius-dockerfile
     deploy:
       restart_policy:
         condition: on-failure
@@ -13,7 +14,5 @@ services:
       - webnet
     environment:
       - "TZ=Europe/Amsterdam"
-    volumes:
-      - "raddb:/etc/raddb"
 networks:
   webnet:

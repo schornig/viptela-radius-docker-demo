@@ -1,15 +1,17 @@
 version: "3"
 services:
   free-radius:
-    image: freeradius/freeradius-server:latest
+    build: 
+      context: freeradius-dockerfile
     deploy:
       restart_policy:
         condition: on-failure
     ports:
       - "1812:1812/udp"
       - "1813:1813/udp"
-    user: "0"
     networks:
       - webnet
+    environment:
+      - "TZ=Europe/Amsterdam"
 networks:
   webnet:

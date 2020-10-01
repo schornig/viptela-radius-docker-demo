@@ -1,0 +1,9 @@
+priv15  Cleartext-Password := "sdwan123"
+        Service-Type = NAS-Prompt-User,
+        cisco-avpair = "shell:priv-lvl=15"
+
+
+
+priv1   Cleartext-Password := "sdwan123"
+        Service-Type = NAS-Prompt-User,
+        cisco-avpair = "shell:priv-lvl=1"

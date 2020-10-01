@@ -14,7 +14,6 @@ services:
     environment:
       - "TZ=Europe/Amsterdam"
     volumes:
-      - "./raddb/clients.conf:/etc/raddb/clients.conf"
-      - "./raddb/mods-config/files/authorise:/etc/raddb/mods-config/files/authorise"
+      - "raddb:/etc/raddb"
 networks:
   webnet:
